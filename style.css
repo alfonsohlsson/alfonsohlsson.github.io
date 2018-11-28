@@ -226,7 +226,8 @@ tr{
 }
 .registrera_dig_uppgifter{
   background-color:#D3D3D3;
-  text-align:center
+  display:flex;
+  flex-direction:row;
 }
 .registrera_dig_uppgifter p{
   font-size:2em;
@@ -236,6 +237,14 @@ tr{
   width:10%;
   background-color:green;
   color:white;
+  font-size:3em;
+  text-decoration:none;
+}
+.background_uppgifter{
+  width:50%;
+  height:100%;
+  background-color:white;
+  position:right;
 }
 @media screen and (max-width: 1000px){
 #mainNav{
