@@ -224,6 +224,15 @@ tr{
 .registrera a:hover{
   color:red;
 }
+.registrera_dig_uppgifter{
+  background-color:#D3D3D3;
+}
+.registrera_dig_uppgifter a{
+  height:10%;
+  width:10%;
+  background-color:green;
+  color:white;
+}
 @media screen and (max-width: 1000px){
 #mainNav{
   grid-area:mainNav;
