@@ -226,6 +226,10 @@ tr{
 }
 .registrera_dig_uppgifter{
   background-color:#D3D3D3;
+  text-align:center
+}
+.registrera_dig_uppgifter p{
+  font-size:2em;
 }
 .registrera_dig_uppgifter a{
   height:10%;
