@@ -110,7 +110,6 @@ footer{
   grid-template-columns: 33% 33% 34%;
   grid-template-areas:
   "mainNav mainNav mainNav"
-  
   "iframe information contact"
   "footer footer footer"
 }
@@ -170,9 +169,8 @@ iframe{
   text-align:center;
   font-size:2em;
 }
-#mainNavOm_oss a{
-
-  height:100%;
+.mainNavOm_oss {
+  height:160%;
 }
 h2{
   text-align:center;
