@@ -253,6 +253,14 @@ tr{
     width:100%;
     height:100%;
   }
+  .box{
+    grid-template-areas:
+    "sidenav sidenav sidenav"
+    "main main main"
+  }
+  #sidenav a{
+    margin:1%;
+  }
   .registrera{
     height:80%;
   }
@@ -273,4 +281,5 @@ tr{
   .contact{
     margin-top:1%;
   }
+
 }
