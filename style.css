@@ -64,6 +64,7 @@ main h3{
   margin:7%;
   font-size:3em;
   text-align:left;
+  color:black;
 }
 .box{
   width:100%;
@@ -257,7 +258,9 @@ tr{
     grid-template-areas:
     "sidenav sidenav sidenav"
     "main main main"
+    "main main main";
   }
+
   #sidenav a{
     margin:1%;
   }
@@ -281,5 +284,6 @@ tr{
   .contact{
     margin-top:2%;
   }
+
 
 }
