@@ -23,7 +23,7 @@ $(document).ready(function(){
 
   }else{
     $("header").animate({
-      marginTop:'50px'
+      marginTop:'60px'
     },400);
     $("#clickBar").css("z-index","0")
     $("#clickBar").animate({
@@ -39,6 +39,7 @@ $(document).ready(function(){
 
     $("#clickP").click(function(){
       navFunction();
+      });
 
     $("#knapp1").click(function(){
       $('html, body').animate({
@@ -48,19 +49,27 @@ $(document).ready(function(){
     })
 
     $("#knapp2").click(function(){
+      $('html, body').animate({
+      scrollTop:$("main").offset().top-80
+    }, 400);
+    navFunction();
+    });
 
+    $("#knapp3").click(function(){
+      $('html, body').animate({
+      scrollTop:$("#firstSection").offset().top-80
+    }, 400);
+    navFunction();
+    });
 
-    /*  $("#Hampus").animate({
-        marginLeft:'2688px'
-      },10000, function() {
-        $("#Hampus").css("display", "none");
-      });
-  */
-
+    $("#knapp4").click(function(){
+      $('html, body').animate({
+      scrollTop:$("#secondSection").offset().top-80
+    }, 400);
+    navFunction();
     });
 
 
-    });
 
     var next = $("#next");
     var prev = $("#prev");
