@@ -127,8 +127,38 @@ section{
 #firstSection{
   background-color:#00AABB;
 }
+#firstSection h1{
+  padding-top:10px;
+  text-align:center;
+  color:black;
+}
 #secondSection{
   background-color:#D8D8D8;
+}
+#secondSection h1{
+  padding-top:10px;
+  text-align:center;
+  color:black;
+
+}
+#secondSection h3{
+  margin:auto;
+  text-align: center;
+}
+#box1{
+     text-align:center;
+     margin-top:10px;;
+     padding-top:100px;
+}
+#box2{
+     text-align:center;
+     margin-top:10px;;
+}
+input{
+  border-radius:10px;
+  margin-top:10px;
+  height:3em;
+  width: 40em;
 }
 
 footer{

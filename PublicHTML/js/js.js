@@ -110,4 +110,49 @@ $(document).ready(function(){
         });
       }
     }
+
+    var i =0;
+
+    function testInfo(phoneInput, re, textsvar) {
+            var OK = re.exec(phoneInput);
+            if (!OK) {
+                  $(textsvar).css("color", "red");
+            } else {
+              $(textsvar).css("color", "green");
+              i++;
+            }
+          }
+
+            var button = document.createElement("button");
+            var text = document.createTextNode("Spara");
+            button.appendChild(text);
+
+
+            $("#phone").keyup(function(){
+              var re = /^[0]{1}[0-9]{6,15}$/;
+              testInfo($('#phone').val(),re,"#phone");
+            });
+
+
+            $("#mail").keyup(function(){
+              var rea = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              testInfo($('#mail').val(),rea,"#mail");
+            });
+
+            $("#firstName").keyup(function(){
+              var check = /^[a-zA-Z]+$/;
+              testInfo($('#firstName').val(),check ,"#firstName");
+            });
+
+            $("#lastName").keyup(function(){
+              var check2 = /^[a-zA-Z]+$/;
+              testInfo($('#lastName').val(),check2 ,"#lastName");
+            });
+            if(i==4){
+              button.append("#secondSection");
+            }
+
+
+
+
 });
