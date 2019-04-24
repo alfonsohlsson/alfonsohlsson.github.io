@@ -132,6 +132,13 @@ section{
   text-align:center;
   color:black;
 }
+#firstSection p{
+  text-align:center;
+  color:white;
+}
+#firstSection img{
+ margin-left:20%;
+}
 #secondSection{
   background-color:#D8D8D8;
 }
