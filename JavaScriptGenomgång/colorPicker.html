@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>colorPicker</title>
+  </head>
+  <body>
+    <script>
+      var picker = document.createElement("INPUT");
+      picker.setAttribute("type", "color");
+      picker.setAttribute("value", localStorage.getItem("color"));
+
+      document.body.appendChild(picker);
+
+      var button = document.createElement("button");
+      button.innerHTML="Ändra";
+      var body=document.getElementsByTagName("body")[0];
+      body.appendChild(button);
+
+      button.addEventListener("click", function(){
+        var x = picker.value;
+        document.body.style.background=x;
+        localStorage.setItem("color", x);
+
+      });
+      document.body.style.background = localStorage.getItem("color");
+
+      </script>
+      <noscript> Sätt på JavaScript :) </noscript>
+  </body>
+</html>

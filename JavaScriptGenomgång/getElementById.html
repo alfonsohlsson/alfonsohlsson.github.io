@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>getElementById example</title>
+
+</head>
+<body>
+  <p id="para1">Some text here</p>
+  <script>
+
+    var button = document.createElement("button");
+    button.innerHTML="blue";
+
+    var button2 = document.createElement("button");
+    button2.innerHTML="red"
+
+    var body=document.getElementsByTagName("body")[0];
+    body.appendChild(button);
+    body.appendChild(button2);
+
+    button.addEventListener("click", function(){
+      changeColor('blue');
+    });
+    button2.addEventListener("click", function(){
+      changeColor('red');
+    });
+  function changeColor(newColor) {
+    var elem = document.getElementById("para1");
+    elem.style.color = newColor;
+
+
+  }
+  </script>
+  <noscript>Sätt på JavaScript :) </noscript>
+</body>
+</html>

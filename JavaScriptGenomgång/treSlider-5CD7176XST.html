@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>treSlider</title>
+
+    <style>
+      #box{
+
+        height:200px;
+        width:400px;
+        overflow:hidden;
+        position:relative;
+      }
+      #imgs{
+        display:flex;
+        position:relative;
+        right:0px;
+      }
+
+      #next {
+      position:absolute;
+      display: none;
+      left:350px;
+      top:100px;
+
+      }
+      #prev{
+        position:absolute;
+        display:none;
+        top:100px;
+        left:10px;
+      }
+      button{
+        background-color:transparent;
+        color:pink;
+        border:2px solid grey;
+      }
+      button:hover{
+        background-color:pink;
+        color:white;
+      }
+      </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="imgs">
+        <img src="b1.png" alt="mercedes">
+        <img src="b2.png" alt="vs">
+        <img src="b3.png" alt="BMW">
+        </div>
+
+    </div>
+    <button id="next">Nästa
+      </button>
+      <button id="prev">Föregående
+        </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var next = $("#next");
+        var prev = $("#prev");
+        var antalPixlar = $("#imgs").css("right");
+
+        $(next).css("display", "block");
+        $(prev).css("display", "block");
+
+        $(next).click(function(){
+          console.log(antalPixlar);
+          if(antalPixlar < 800){
+            $("#imgs").animate({right:"+=400"}, function() {
+              antalPixlar = $("#imgs").css("right");
+            });
+          }
+        });
+
+        $(prev).click(function(){
+          console.log(antalPixlar);
+          if(antalPixlar > 0) {
+            $("#imgs").animate({right:"-=400"}, function() {
+              antalPixlar = $("#imgs").css("right");
+            });
+          }
+        });
+
+
+      });
+    </script>
+
+  </body>
+</html>

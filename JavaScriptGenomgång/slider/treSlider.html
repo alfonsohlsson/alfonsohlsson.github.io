@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>treSlider</title>
+
+    <style>
+      #box{
+
+        height:200px;
+        width:400px;
+        overflow:hidden;
+        position:relative;
+      }
+      #imgs{
+        display:flex;
+        position:relative;
+        right:0px;
+      }
+
+      #next {
+      position:absolute;
+      display: none;
+      left:350px;
+      top:100px;
+
+      }
+      #prev{
+        position:absolute;
+        display:none;
+        top:100px;
+        left:10px;
+      }
+      button{
+        background-color:grey;
+        color:white;
+        border:1px solid white;
+      }
+      button:hover{
+        background-color:pink;
+        color:white;
+      }
+      </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="imgs">
+        <img src="b1.png" alt="mercedes">
+        <img src="b2.png" alt="vs">
+        <img src="b3.png" alt="BMW">
+        </div>
+
+    </div>
+
+    <button id="next">Nästa
+      </button>
+      <button id="prev">Föregående
+        </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    //document ready gör att javascriptet körs efter att sidan laddats in
+      $(document).ready(function(){
+        var next = $("#next");
+        var prev = $("#prev");
+        var antalPixlar = parseInt($("#imgs").css("right"));
+
+        //Här kallas mina knappar fram, eftersom jag har satt display none i css då de inte skall synas utan javascript
+        $(next).css("display", "block");
+        $(prev).css("display", "block");
+
+        //Funktion som gör det möjligt att byta bild, en if sats som gör att det inte skall gå att trycka på knappen när det inte finns någon mer bild/max antal pixlar
+        $(next).click(function(){
+          if(antalPixlar < 800){
+            $("#imgs").animate({right:"+=400"}, function() {
+              antalPixlar = parseInt($("#imgs").css("right"));
+            });
+          }
+        });
+        //Likadan som förra, fast tvärtom.
+        $(prev).click(function(){
+          if(antalPixlar > 0) {
+            $("#imgs").animate({right:"-=400"}, function() {
+              antalPixlar = parseInt($("#imgs").css("right"));
+            });
+          }
+        });
+        //Här skapar jag en variabel som innehåller en timer på 3500 millisekunder
+        var timer = setInterval(timerFunction, 3500);
+        //Här skapar jag en funktion som baseras på min timer, den skall med hjälp av if-satsen-
+         //byta bild/flytta ett visst antal pixlar. Else är till för att flytta från sista bilden till första.
+          function timerFunction(){
+          if(antalPixlar < 800){
+            $("#imgs").animate({right:"+=400"}, function() {
+              antalPixlar = parseInt($("#imgs").css("right"));
+            });
+
+          }else {
+            $("#imgs").animate({right:"-=800"}, function() {
+              antalPixlar = parseInt($("#imgs").css("right"));
+            });
+          }
+        }
+
+      });
+    </script>
+
+  </body>
+</html>
